@@ -71,10 +71,21 @@
              name="cgpa">
           </div>
 
-          <div class="form-group">
-            <label for="image">Image: </label>
-            <input type="file" class="form-control" placeholder="Enter department name" id="image" name="image">
-          </div>
+            <div class="form-group">
+             <label for="image"> Image: </label>
+            
+             <input type="file" id="file" class="form-control" onchange="readURL(this);" required="" name="image">           
+       
+                 <img  id="one">
+            </div>
+
+
+
+
+
+
+
+
 
         
           <div style="width: 50%" class="form-group">
@@ -99,5 +110,40 @@
 </div>
 @endsection
 @push('js')
+
+<!--  <script>
+    function loadPreview(input, id) {
+      id = id || '#preview_img';
+      if (input.files && input.files[0]) {
+          var reader = new FileReader();
+   
+          reader.onload = function (e) {
+              $(id)
+                      .attr('src', e.target.result)
+                      .width(200)
+                      .height(150);
+          };
+
+          reader.readAsDataURL(input.files[0]);
+      }
+   }
+  </script> -->
+
+
+
+  <script type="text/javascript">
+  function readURL(input){
+    if (input.files && input.files[0]) {
+      var reader = new FileReader();
+      reader.onload = function(e) {
+        $('#one')
+        .attr('src', e.target.result)
+        .width(80)
+        .height(80);
+      };
+      reader.readAsDataURL(input.files[0]);
+    }
+  }
+</script>
 
 @endpush

@@ -44,15 +44,7 @@
             <td>{{ $department->name  }}</td>
             <td>{{ $department->created_at  }}</td>
            <td>
-            {{-- <button class="btn btn-danger waves-effect" type="button" onclick="deleteTag({{ $department->id }})">
-              <i class=" fa fa-trash" aria-hidden="true"></i>
-            </button>
-
-            <form id="delete-form-{{ $department->id }}" action="{{ route('admin.departments.destroy',$department->id) }}" method="POST" style="display: none;">
-              @csrf
-              @method('DELETE')
-              
-            </form> --}}
+         
             <form method="POST" id="delete-form-{{ $department->id }}" action="{{ route('admin.departments.destroy', $department->id) }}" style="display: none;">
               {{ csrf_field() }}
               {{ method_field('delete') }} 

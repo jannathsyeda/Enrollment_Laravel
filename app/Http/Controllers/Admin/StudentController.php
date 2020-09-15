@@ -149,6 +149,7 @@ class StudentController extends Controller
 
            // Get Form Image
         $image = $request->file('image');
+
         $slug = str_slug($request->name);
         if (isset($image)) {
              
@@ -183,21 +184,19 @@ class StudentController extends Controller
   
     
 
-     $students = new Student();
-    //$students->user_id = Auth::id();
-    $students->name = $request->name;
-    $students->slug = $slug;
-    $students->department_id = $request->department_id;
-    $students->image = $imageName;
-    $students->batch = $request->batch;
-    $students->reg_id = $request->reg_id;
-    $students->phone = $request->phone;
-    $students->gender = $request->gender;
-    $students->cgpa = $request->cgpa;
+    $post->name = $request->name;
+    $post->slug = $slug;
+    $post->department_id = $request->department_id;
+    $post->image = $imageName;
+    $post->batch = $request->batch;
+    $post->reg_id = $request->reg_id;
+    $post->phone = $request->phone;
+    $post->gender = $request->gender;
+    $post->cgpa = $request->cgpa;
 
 
 
-    $students->save();
+    $post->save();
    
     return redirect(route('admin.student.index'))->with('successMsg', 'Student Updated Successfully');
 

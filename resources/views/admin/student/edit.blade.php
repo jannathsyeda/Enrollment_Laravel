@@ -70,8 +70,14 @@
           <div class="form-group">
             <label for="image">Image: </label>
             <input type="file" class="form-control" placeholder="Enter department name" id="image" name="image">
+
           </div>
 
+          <div class="form-group">
+              <label for="old_image"> Old Brand Logo</label>
+              <img src="{{ asset('storage/post/'.$student->image) }}" height="70px;" width="90px;">
+                  <input type="hidden" name="old_image" value="{{ $student->image }}">   
+       </div>
         
            <div style="width: 50%" class="form-group">       
             <label class="form-label" for="department_id">Select Departments</label>
